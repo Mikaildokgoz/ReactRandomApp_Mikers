@@ -1,5 +1,13 @@
-
-
+*{
+   box-sizing:border-box;
+   margin: 0;
+   padding: 0;
+}
+.mainImg{
+  display: flex;
+  justify-content:space-around;
+  margin:2rem;
+}
 .icons{
   display: flex;
   justify-content: center;
