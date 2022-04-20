@@ -8,7 +8,7 @@ import woman from "../../assets/woman.svg";
 import padlock from "../../assets/padlock.svg";
 import phone from "../../assets/phone.svg";
 import map from "../../assets/map.svg";
-import { Context } from "../../contextHook/Contexts";
+// import { Context } from "../../contextHook/Contexts";
 import useFetch from "../../customHook/useFetch";
 
 const Icons = () => {
