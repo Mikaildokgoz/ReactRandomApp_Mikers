@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState(false);
   const [showTable, setShowTable] = useState(false);
   const [up, setUp] = useState("name");
-  const [down, setDown] = useState("");
+  const [down, setDown] = useState();
   const [user, setUser] = useState([]);
 
   const getApi = () => {
@@ -32,6 +32,10 @@ function App() {
         setError("");
       });
   };
+  
+ 
+
+
 
   useEffect(() => {
     getApi();
@@ -40,13 +44,14 @@ function App() {
 
   const handleRandom = () => {
     getApi();
-    setDown(data?.name.first);
+    setDown(data.name.first);
     setUp("name");
   };
 
   const handleAdd = () => {
     setShowTable(true);
-    const newUser = [...user, data.name.first, data.dot.age, data.phone];
+    const newUser = [
+      ...user,[data?.name.first, data?.dob.age, data?.phone ]];
     setUser(newUser);
     console.log(user);
     console.log(newUser);
@@ -155,11 +160,12 @@ function App() {
               return (
                 <tbody>
                   <td>{each[0]}</td>
-                  {/* <td>{each[1]}</td>
-                  <td>{each[2]}</td> */}
+                  <td>{each[1]}</td>
+                  <td>{each[2]}</td>
                 </tbody>
               );
             })}
+           
           </table>
         </div>
       )}
