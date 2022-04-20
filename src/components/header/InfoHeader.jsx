@@ -1,18 +1,16 @@
-import React, { useState } from "react";
-import useFetch from "../../customHook/useFetch";
+import React, { useContext, useState } from "react";
+import { Context } from "../../contextHook/Contexts";
+// import useFetch from "../../customHook/useFetch";
 
 const InfoHeader = () => {
+  // const { data } = useFetch("https://randomuser.me/api/");
+  
 
-  const {data} = useFetch('https://randomuser.me/api/')
-
-  const [up, setUp] = useState('')
+ 
 
   return (
-
     <div>
-      <h2>
-        {up && 'name' }
-      </h2>
+      <h2>My is</h2>
     </div>
   );
 };

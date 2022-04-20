@@ -11,7 +11,7 @@ const ContextApp = () => {
   return (
     <Context>
       <ImgHeader/>
-      <InfoHeader />
+      {/* <InfoHeader /> */}
       <Icons />
     </Context>
   )

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "../button/Button";
 import man from "../../assets/man.svg";
 import growingUpMan from "../../assets/growingUpMan.svg";
@@ -8,22 +8,32 @@ import woman from "../../assets/woman.svg";
 import padlock from "../../assets/padlock.svg";
 import phone from "../../assets/phone.svg";
 import map from "../../assets/map.svg";
-// import { Context } from "../../contextHook/Contexts";
+import { Context } from "../../contextHook/Contexts";
 import useFetch from "../../customHook/useFetch";
 
 const Icons = () => {
+  const [up, setUp] = useState();
+  // const [down, setDown] = useState();
   const { data } = useFetch("https://randomuser.me/api/");
 
   // const {handleMouse} = useContext(Context)
 
-  const searchType = () => {};
+  const searchType = () => {
+
+  };
 
   const handleMouse = (e) => {
-    console.log(e.target.id);
+    if(e.target.id === 1){
+      setUp(data?.name.first)
+    }   
   };
 
   return (
     <div>
+       <div>
+      <h2>My {up} is</h2>
+      {/* <h2>My {down!!}</h2> */}
+    </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div id="1" onMouseOver={handleMouse}>
           {data?.gender === "male" ? (

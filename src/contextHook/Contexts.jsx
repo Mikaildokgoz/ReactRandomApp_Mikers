@@ -1,21 +1,40 @@
 import { createContext, useEffect, useState } from "react";
-import useFetch from "../customHook/useFetch";
 
 export const RandomUserContext = createContext();
 
-
-
 export const Context = (props) => {
 
+const [data, setData] = useState()
 
- const handleMouse = () => {
-    console.log('denemecontext');
+const [Id, setId] = useState()
+// const [down, setDown] = useState()
+
+    useEffect(() => {
+        fetch("https://randomuser.me/api/")
+        .then(res => {
+          if (!res.ok) {
+            // setError('Something went wrong!!!')
+            setData([])
+          } else {
+            return res.json()
+          }
+        })
+        .then(res => {
+          setData(res.results[0])
+        //   setError('')
+        });
+    }, []);
+
+   
+
+ const handleMouse = (e) => {
+     setId(e.target.id)
  };
 
 
 
     return(
-        <RandomUserContext.Provider value={{handleMouse}}>
+        <RandomUserContext.Provider value={{handleMouse, setId, Id, data}}>
             {props.children}
         </RandomUserContext.Provider>
     )
