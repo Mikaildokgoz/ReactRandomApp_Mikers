@@ -1,9 +1,9 @@
 import "./App.css";
 import oldMan from "../src/assets/growingUpMan.svg";
-import oldWoman from "../src/assets/growingUpWoman.svg";
+
 import mail from "../src/assets/mail.svg";
 import man from "../src/assets/man.svg";
-import woman from "../src/assets/woman.svg";
+
 import phone from "../src/assets/phone.svg";
 import padlock from "../src/assets/padlock.svg";
 import map from "../src/assets/map.svg";
@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState();
-  const [error, setError] = useState(false);
+ 
   const [showTable, setShowTable] = useState(false);
   const [up, setUp] = useState("name");
   const [down, setDown] = useState();
@@ -39,7 +39,7 @@ function App() {
 
   useEffect(() => {
     getApi();
-    setDown(data?.name.first);
+    setDown(data.name.first);
   }, []);
 
   const handleRandom = () => {
