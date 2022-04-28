@@ -21,7 +21,7 @@ function App() {
     fetch("https://randomuser.me/api/")
       .then((res) => {
         if (!res.ok) {
-          setError("Something went wrong!!!");
+         
           setData([]);
         } else {
           return res.json();
@@ -29,7 +29,7 @@ function App() {
       })
       .then((res) => {
         setData(res.results[0]);
-        setError("");
+       
       });
   };
   
