@@ -39,8 +39,8 @@ function App() {
 
   useEffect(() => {
     getApi();
-    setDown(data.name.first);
-  }, []);
+    setDown(data?.name.first);
+  });
 
   const handleRandom = () => {
     getApi();
